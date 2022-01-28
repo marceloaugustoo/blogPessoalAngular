@@ -44,3 +44,4 @@ export class TemaDeleteComponent implements OnInit {
 
   }
 }
+ 
