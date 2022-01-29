@@ -14,14 +14,14 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  token= {
-    headers: new HttpHeaders().set('Authorization',environment.token),
-  };
+  token = {
+    headers: new HttpHeaders().set('Authorization', environment.token)
+  }
 
   refreshToken(){
     this.token = {
-      headers: new HttpHeaders().set('Authorization',environment.token),
-    };
+      headers: new HttpHeaders().set('Authorization', environment.token)
+    }
   }
 
   entrar(userLogin:UserLogin):Observable<UserLogin> {
@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   getByIdUser(id:number): Observable<User>{
-    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`)
+    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`,this.token)
 
   }
 
